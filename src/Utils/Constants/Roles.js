@@ -1,0 +1,1 @@
+export const roles = ['admin','patient','doctor','caregiver']
