@@ -11,7 +11,7 @@ class ResTypes {
     };
     successMessages = {
         data_retrieved: { message: "data retrieved successfully" },
-        server_online: { message: "api-gateway Online" },
+        server_online: { message: "api gateway online" },
     };
 }
 
