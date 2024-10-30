@@ -5,8 +5,8 @@ import corsOption from "./Config/CorsConfig.js";
 import proxy from 'express-http-proxy'
 import response from "./Utils/ResponseHandler/ResponseHandler.js";
 import ResTypes from "./Utils/Constants/ResTypes.js";
-import HeaderValidation from "./MiddleWare/YupSchema/HeaderValidation.js";
 import AuthHeaderYup from "./Utils/Validation/AuthHeaderYup.js";
+import HeaderValidation from "./MiddleWare/YupSchema/HeaderValidation.js"
 
 dotenv.config()
 const app = express()
