@@ -1,7 +1,8 @@
 import HttpType from "../Constants/HttpTypes.js";
 
-const response = (res,success, code, data) => {
+const response = (res,code, data) => {
     const status = HttpType.getStatus(code)
+    const success = code>=200 && code <300
     const payLoad = {
         code,
         success,

@@ -1,4 +1,4 @@
-name: "Build and Deploy to Cloud Run"
+name: "Build, Test, and Deploy to Cloud Run"
 
 on:
   push:
@@ -11,9 +11,35 @@ env:
   GCR_SERVICE: "${{ secrets.GCR_SERVICE }}"
   GAR_REGION: "${{ secrets.GAR_REGION }}"
   GAR_NAME: "${{ secrets.GAR_NAME }}"
+  CHIA_SERVICE_ROUTE: "${{ secrets.CHIA_SERVICE_ROUTE }}"
+  AUTH_SERVICE_ROUTE: "${{ secrets.AUTH_SERVICE_ROUTE }}"
+  GATEWAY_PORT: "${{ secrets.GATEWAY_PORT }}"
 
 jobs:
+  # Test Job
+  test:
+    runs-on: "ubuntu-latest"
+    
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+      
+      - name: "Set up Node.js"
+        uses: "actions/setup-node@v4"
+        with:
+          node-version: "20"
+
+      - name: "Install dependencies"
+        run: |
+          npm install
+
+      - name: "Run tests"
+        run: |
+          npm test
+
+  # Deploy Job
   deploy:
+    needs: test
     runs-on: "ubuntu-latest"
 
     permissions:
@@ -50,11 +76,8 @@ jobs:
             --platform managed \
             --region ${{ env.GCR_REGION }} \
             --port 8349 \
-            --allow-unauthenticated \
-            --set-env-vars CHIA_SERVICE_ROUTE=${{ secrets.CHIA_SERVICE_ROUTE }} \
-            --set-env-vars AUTH_SERVICE_ROUTE=${{ secrets.AUTH_SERVICE_ROUTE }} \
-            --set-env-vars GATEWAY_PORT=${{ secrets.GATEWAY_PORT }}
+            --allow-unauthenticated
 
       - name: "Show output"
-        run: |2-
-          echo ${{ steps.deploy.outputs.url }}
+        run: |
+          echo "Deployment URL: ${{ steps.deploy.outputs.url }}"

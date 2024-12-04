@@ -7,7 +7,7 @@ function HeaderValidation(schema){
             await schema.validate(header)
             next();
         } catch (error) {
-            return response(res,false,400,{message:error.message})
+            return response(res,400,{message:error.message})
         }
     }
 }

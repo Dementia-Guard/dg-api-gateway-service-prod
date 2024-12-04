@@ -1,4 +1,4 @@
-import yup from 'yup'
+import * as yup from 'yup'
 import { roles } from '../Constants/Roles.js';
 
 class AuthHeaderYup {
