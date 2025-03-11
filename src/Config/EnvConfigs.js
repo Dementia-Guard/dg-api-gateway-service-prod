@@ -7,4 +7,5 @@ export const EnvConfig = {
     GATEWAY_PORT: process.env.GATEWAY_PORT,
     AUTH_SERVICE_ROUTE:process.env.AUTH_SERVICE_ROUTE,
     CHIA_SERVICE_ROUTE:process.env.CHIA_SERVICE_ROUTE,
+    MRI_SERVICE_ROUTE:process.env.MRI_SERVICE_ROUTE,
 };

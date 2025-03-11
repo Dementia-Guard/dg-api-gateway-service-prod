@@ -13,6 +13,7 @@ env:
   GAR_NAME: "${{ secrets.GAR_NAME }}"
   CHIA_SERVICE_ROUTE: "${{ secrets.CHIA_SERVICE_ROUTE }}"
   AUTH_SERVICE_ROUTE: "${{ secrets.AUTH_SERVICE_ROUTE }}"
+  MRI_SERVICE_ROUTE: "${{ secrets.MRI_SERVICE_ROUTE }}"
   GATEWAY_PORT: "${{ secrets.GATEWAY_PORT }}"
 
 jobs:
