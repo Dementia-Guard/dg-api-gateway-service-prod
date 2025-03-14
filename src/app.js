@@ -25,6 +25,7 @@ app.use('/api/v1/chia-service', HeaderValidation(AuthHeaderYup.authHeaderSchema)
 app.use('/api/v1/mri-service', proxy(EnvConfig.MRI_SERVICE_ROUTE))
 app.use('/api/v1/treatment-plan-service', proxy(EnvConfig.TREATMENT_PLAN_SERVICE_ROUTE))
 app.use('/api/v1/notification-service', proxy(EnvConfig.NOTIFICATION_SERVICE_ROUTE))
+app.use('/api/v1/home-mqtt-service', proxy(EnvConfig.HOME_MQTT_SERVICE_ROUTE))
 
 //not found route
 app.use((req, res) => {
