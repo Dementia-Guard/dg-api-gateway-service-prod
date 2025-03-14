@@ -15,6 +15,7 @@ env:
   AUTH_SERVICE_ROUTE: "${{ secrets.AUTH_SERVICE_ROUTE }}"
   MRI_SERVICE_ROUTE: "${{ secrets.MRI_SERVICE_ROUTE }}"
   TREATMENT_PLAN_SERVICE_ROUTE: "${{ secrets.TREATMENT_PLAN_SERVICE_ROUTE }}"
+  NOTIFICATION_SERVICE_ROUTE: "${{ secrets.NOTIFICATION_SERVICE_ROUTE }}"
   GATEWAY_PORT: "${{ secrets.GATEWAY_PORT }}"
 
 jobs:
@@ -82,6 +83,7 @@ jobs:
             --set-env-vars "CHIA_SERVICE_ROUTE=${{ env.CHIA_SERVICE_ROUTE }}" \
             --set-env-vars "AUTH_SERVICE_ROUTE=${{ env.AUTH_SERVICE_ROUTE }}" \
             --set-env-vars "MRI_SERVICE_ROUTE=${{ env.MRI_SERVICE_ROUTE }}" \
+            --set-env-vars "NOTIFICATION_SERVICE_ROUTE=${{ env.NOTIFICATION_SERVICE_ROUTE }}" \
             --set-env-vars "TREATMENT_PLAN_SERVICE_ROUTE=${{ env.TREATMENT_PLAN_SERVICE_ROUTE }}" \
             --set-env-vars "GATEWAY_PORT=${{ env.GATEWAY_PORT }}"
 
