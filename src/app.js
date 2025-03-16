@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 // proxies
 app.use('/api/v1/auth', proxy(EnvConfig.AUTH_SERVICE_ROUTE))
 app.use('/api/v1/chia-service', HeaderValidation(AuthHeaderYup.authHeaderSchema), Tokenware, proxy(EnvConfig.CHIA_SERVICE_ROUTE))
+
 app.use('/api/v1/mri-service', proxy(EnvConfig.MRI_SERVICE_ROUTE))
 app.use('/api/v1/treatment-plan-service', proxy(EnvConfig.TREATMENT_PLAN_SERVICE_ROUTE))
 app.use('/api/v1/notification-service', proxy(EnvConfig.NOTIFICATION_SERVICE_ROUTE))
