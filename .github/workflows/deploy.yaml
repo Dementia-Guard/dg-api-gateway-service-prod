@@ -18,6 +18,7 @@ env:
   NOTIFICATION_SERVICE_ROUTE: "${{ secrets.NOTIFICATION_SERVICE_ROUTE }}"
   HOME_MQTT_SERVICE_ROUTE: "${{ secrets.HOME_MQTT_SERVICE_ROUTE }}"
   DEVICE_SERVICE_ROUTE: "${{ secrets.DEVICE_SERVICE_ROUTE }}"
+  START_SESSION_ROUTE: "${{ secrets.START_SESSION_ROUTE }}"
   GATEWAY_PORT: "${{ secrets.GATEWAY_PORT }}"
 
 jobs:
@@ -89,6 +90,7 @@ jobs:
             --set-env-vars "HOME_MQTT_SERVICE_ROUTE=${{ env.HOME_MQTT_SERVICE_ROUTE }}" \
             --set-env-vars "TREATMENT_PLAN_SERVICE_ROUTE=${{ env.TREATMENT_PLAN_SERVICE_ROUTE }}" \
             --set-env-vars "DEVICE_SERVICE_ROUTE=${{ env.DEVICE_SERVICE_ROUTE }}" \
+            --set-env-vars "START_SESSION_ROUTE=${{ env.START_SESSION_ROUTE }}" \
             --set-env-vars "GATEWAY_PORT=${{ env.GATEWAY_PORT }}"
 
       - name: "Show output"
