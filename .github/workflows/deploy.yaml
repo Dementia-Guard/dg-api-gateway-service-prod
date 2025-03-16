@@ -87,6 +87,7 @@ jobs:
             --set-env-vars "NOTIFICATION_SERVICE_ROUTE=${{ env.NOTIFICATION_SERVICE_ROUTE }}" \
             --set-env-vars "HOME_MQTT_SERVICE_ROUTE=${{ env.HOME_MQTT_SERVICE_ROUTE }}" \
             --set-env-vars "TREATMENT_PLAN_SERVICE_ROUTE=${{ env.TREATMENT_PLAN_SERVICE_ROUTE }}" \
+            --set-env-vars "DEVICE_SERVICE_ROUTE=${{ env.DEVICE_SERVICE_ROUTE }}" \
             --set-env-vars "GATEWAY_PORT=${{ env.GATEWAY_PORT }}"
 
       - name: "Show output"
