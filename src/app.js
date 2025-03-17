@@ -29,6 +29,7 @@ app.use('/api/v1/notification-service', proxy(EnvConfig.NOTIFICATION_SERVICE_ROU
 app.use('/api/v1/home-mqtt-service', proxy(EnvConfig.HOME_MQTT_SERVICE_ROUTE))
 app.use('/api/v1/device-service', proxy(EnvConfig.DEVICE_SERVICE_ROUTE))
 app.use('/api/v1/therapy-assistant-service', proxy(EnvConfig.START_SESSION_ROUTE))
+app.use('/api/v1/progression-tracking-service', proxy(EnvConfig.PROGRESSION_TRACKING_SERVICE_ROUTE))
 
 //not found route
 app.use((req, res) => {
